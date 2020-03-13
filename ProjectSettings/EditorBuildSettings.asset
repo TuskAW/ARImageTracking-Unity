@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ARImageTracking-Unity/Examples/Scenes/ARMarkerSample.unity
+    guid: 11287b5824bf9f243a724c707ace40fc
   m_configObjects: {}
