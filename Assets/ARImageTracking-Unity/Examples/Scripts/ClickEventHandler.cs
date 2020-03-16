@@ -7,12 +7,25 @@ namespace ARImageTracking.Example
     {
         public GameObject TargetObject;
 
+        private ActiveStateInverter _ActiveStateInverter;
+        private ColorChanger _ColorChanger;
+
+        void Start()
+        {
+            _ActiveStateInverter = TargetObject.GetComponent<ActiveStateInverter>();
+            _ColorChanger = TargetObject.GetComponent<ColorChanger>();
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
-            ActiveStateInverter inverter = TargetObject.GetComponent<ActiveStateInverter>();
-            if (inverter != null)
+            if (_ActiveStateInverter != null)
             {
-                inverter.InvertActiveState();
+                _ActiveStateInverter.InvertActiveState();
+            }
+
+            if (_ColorChanger != null)
+            {
+                _ColorChanger.ChangeCurrentColor();
             }
         }
     }
